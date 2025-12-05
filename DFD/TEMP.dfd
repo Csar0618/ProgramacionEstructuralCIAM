@@ -1,0 +1,25 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+30
+'Ingresa la temperatura en C '
+5
+1
+4
+num1
+6
+1
+4
+temp
+11
+num1*1.8+32
+4
+1
+46
+'La Temperatura en Grados Fahrenheit es ',temp
+1

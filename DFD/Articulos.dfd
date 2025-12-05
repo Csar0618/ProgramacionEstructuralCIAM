@@ -1,0 +1,33 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+34
+'Ingresa la cantidad de articulos'
+5
+1
+4
+num1
+4
+1
+40
+'ingresa el valor unitario del articulo'
+5
+1
+4
+num2
+6
+1
+5
+total
+9
+num1*num2
+4
+1
+76
+'el valor total de ',num1,' de piezas con un valor de ',num2,' es de ',total
+1

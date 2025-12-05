@@ -1,0 +1,29 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+20
+'Ingresa 2 valores '
+5
+1
+4
+num1
+5
+1
+4
+num2
+6
+1
+4
+prom
+11
+num1+num2/2
+4
+1
+54
+'El valor promedio de ',num1,' mas  ',num2,' es ',prom
+1

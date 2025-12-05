@@ -1,0 +1,25 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+25
+'Ingresa tamaño por lado'
+5
+1
+4
+num1
+6
+1
+4
+lado
+6
+num1*4
+4
+1
+63
+'El perimetro del cuadrado cuando su lado es ',num1,' es ',lado
+1

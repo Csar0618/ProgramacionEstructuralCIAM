@@ -1,0 +1,33 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+20
+'Solicita un Numero'
+5
+1
+4
+num1
+4
+1
+22
+'Solicita Otro Numero'
+5
+1
+4
+num2
+6
+1
+5
+Resta
+9
+num1-num2
+4
+1
+43
+'La resta de ',num1,' y ',num2,' es ',Resta
+1

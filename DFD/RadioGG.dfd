@@ -1,0 +1,25 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+18
+'Coloca el Radio '
+5
+1
+4
+num1
+6
+1
+4
+Area
+16
+num1*num1*3.1416
+4
+1
+53
+'El Area del Circulo con radio de ',num1,'  es ',Area
+1

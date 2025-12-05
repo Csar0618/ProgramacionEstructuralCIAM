@@ -1,0 +1,29 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+28
+'Ingresa la distancia en KM'
+5
+1
+4
+num1
+6
+2
+2
+mt
+9
+num1*1000
+2
+cm
+11
+num1*100000
+4
+1
+62
+'La distacia de ',num1,'Km en Metros es ',mt,' y en cm es ',cm
+1

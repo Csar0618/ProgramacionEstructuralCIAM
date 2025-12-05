@@ -1,0 +1,33 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+20
+'Ingresa un numero '
+5
+1
+4
+num1
+6
+2
+4
+cuad
+9
+num1*num1
+4
+cubo
+14
+num1*num1*num1
+4
+1
+42
+'Elvalor de ',num1,' al cuadrado es ',cuad
+4
+1
+39
+'El valor al Cubo de ',num1,' es ',cubo
+1
