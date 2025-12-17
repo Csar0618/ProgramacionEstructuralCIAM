@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <string.h>
+
+// Definición de la estructura Celular, ahora con precio
+typedef struct {
+    char nombre[50];
+    float calificacion; // El valor que se usa para ordenar
+    float precio;       // Nuevo campo de precio
+} Celular;
+
+// -----------------------------------------------------------
+// Función auxiliar: Reorganiza el subárbol del heap (Montículo Máximo)
+// -----------------------------------------------------------
+void heapify(Celular arr[], int n, int i) {
+    int mas_grande = i;      
+    int izquierda = 2 * i + 1; 
+    int derecha = 2 * i + 2;   
+    Celular temp;
+
+    // Se compara solo por la CALIFICACIÓN
+    if (izquierda < n && arr[izquierda].calificacion > arr[mas_grande].calificacion) {
+        mas_grande = izquierda;
+    }
+
+    if (derecha < n && arr[derecha].calificacion > arr[mas_grande].calificacion) {
+        mas_grande = derecha;
+    }
+
+    // Si hay que reorganizar
+    if (mas_grande != i) {
+        // Intercambio de la ESTRUCTURA COMPLETA (Nombre, Calificación, Precio)
+        temp = arr[i];
+        arr[i] = arr[mas_grande];
+        arr[mas_grande] = temp;
+
+        heapify(arr, n, mas_grande);
+    }
+}
+
+// -----------------------------------------------------------
+// Función principal: Implementa el algoritmo Heap Sort
+// -----------------------------------------------------------
+void heapSort(Celular arr[], int n) {
+    Celular temp;
+
+    // 1. Construir el montículo
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    // 2. Extraer elementos uno por uno
+    for (int i = n - 1; i > 0; i--) {
+        // Mueve la raíz actual al final
+        temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+
+        heapify(arr, i, 0);
+    }
+}
+
+// -----------------------------------------------------------
+// Función para imprimir el arreglo (ahora incluye el precio)
+// -----------------------------------------------------------
+void imprimirCelulares(Celular arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        // Formato para mostrar la calificación y el precio
+        printf("%d. %-20s -> Calif: %.2f | Precio: $%.2f\n", i + 1, arr[i].nombre, arr[i].calificacion, arr[i].precio);
+    }
+}
+
+// -----------------------------------------------------------
+// Función principal main()
+// -----------------------------------------------------------
+int main() {
+    // Lista de celulares con calificación y precio (valores de ejemplo)
+    Celular lista_celulares[] = {
+        {"Samsung Galaxy S24", 4.7f, 1200.00f},
+        {"iPhone 15 Pro", 4.9f, 1399.99f},
+        {"Xiaomi 14 Ultra", 4.6f, 1150.50f},
+        {"Google Pixel 8", 4.5f, 799.00f},
+        {"OnePlus 12", 4.4f, 899.99f},
+        {"Motorola Edge 50", 3.8f, 550.00f},
+        {"Sony Xperia 1 V", 4.2f, 950.00f}
+    };
+    
+    int n = sizeof(lista_celulares) / sizeof(lista_celulares[0]);
+
+    printf("--- Clasificacion de Celulares (Ordenado por CALIFICACION) ---\n");
+    
+    // --- Estado Inicial ---
+    printf("\nLista Original (Desordenada):\n");
+    imprimirCelulares(lista_celulares, n);
+
+    // Ejecuta el algoritmo Heap Sort
+    heapSort(lista_celulares, n);
+
+    // --- Estado Final (Ordenado de Menor a Mayor Calificación) ---
+    printf("\nLista Ordenada por Calificacion (Menor a Mayor):\n");
+    imprimirCelulares(lista_celulares, n);
+
+    // --- Ranking Superior (Mayor a Menor Calificación) ---
+    printf("\n🏆 Ranking TOP de Celulares (Mayor a Menor Calificacion):\n");
+    printf("-----------------------------------------------------------------\n");
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d. %-20s -> Calif: %.2f | Precio: $%.2f\n", 
+               n - i, 
+               lista_celulares[i].nombre, 
+               lista_celulares[i].calificacion, 
+               lista_celulares[i].precio);
+    }
+    printf("-----------------------------------------------------------------\n");
+
+    return 0;
+}
